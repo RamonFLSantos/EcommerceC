@@ -25,7 +25,7 @@ ecommerce-terminal/ <br>
 
 ---
 
-## ⚙️ Compilação e Execução
+## Compilação e Execução
 
 1. Compile:
    ```bash
@@ -34,3 +34,25 @@ ecommerce-terminal/ <br>
 2. Execute:
    ```bash
    ./build/ecommerce
+
+---
+
+## Persistência
+
+Os dados são salvos na pasta data/ em formato .csv, garantindo que o sistema possa ser fechado e reaberto sem perda de informações.
+
+---
+
+## Habilidades demonstradas
+
+* Manipulação de arquivos (fopen, fprintf, fscanf)
+* Modularização (uso de .h e .c)
+* Structs e ponteiros
+* Lógica procedural e controle de fluxo
+* Simulação de persistência de dados
+
+---
+
+## Autor
+
+Projeto desenvolvido por Ramon Felipe dos Santos, para fins de aprendizado e prática em linguagem C.
