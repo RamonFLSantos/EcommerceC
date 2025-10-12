@@ -16,11 +16,11 @@ Simular um sistema de e-commerce via terminal com persistência em arquivos `.tx
 ---
 
 ## Estrutura de Pastas
-ecommerce-terminal/ \\
-├── src/ → Códigos-fonte (.c) \\
-├── include/ → Headers (.h) \\
-├── data/ → Arquivos persistentes (.csv) \\
-├── build/ → Binários compilados \\
+ecommerce-terminal/ <br>
+├── src/ → Códigos-fonte (.c) <br>
+├── include/ → Headers (.h) <br>
+├── data/ → Arquivos persistentes (.csv) <br>
+├── build/ → Binários compilados <br>
 └── README.md
 
 ---
