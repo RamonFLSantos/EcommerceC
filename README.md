@@ -16,19 +16,21 @@ Simular um sistema de e-commerce via terminal com persistência em arquivos `.tx
 ---
 
 ## Estrutura de Pastas
-ecommerce-terminal/
-├── src/ → Códigos-fonte (.c)
-├── include/ → Headers (.h)
-├── data/ → Arquivos persistentes (.csv)
-├── build/ → Binários compilados
+ecommerce-terminal/ \\
+├── src/ → Códigos-fonte (.c) \\
+├── include/ → Headers (.h) \\
+├── data/ → Arquivos persistentes (.csv) \\
+├── build/ → Binários compilados \\
 └── README.md
 
 ---
 
 ## ⚙️ Compilação e Execução
+
 1. Compile:
    ```bash
    gcc src/*.c -I include -o build/ecommerce
 
 2. Execute:
+   ```bash
    ./build/ecommerce
