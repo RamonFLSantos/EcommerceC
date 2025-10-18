@@ -16,5 +16,6 @@ void cadastrarProduto();
 void listarProdutos();
 void salvarProdutosCSV(Produto p);
 void atualizarEstoque(int idProduto, int novaQuant);
+void excluirProduto();
 
 #endif
