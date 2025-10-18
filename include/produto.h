@@ -11,8 +11,10 @@ typedef struct produto {
   int quant;
 } Produto;
 
+void verificaOuCriaArquivo();
 void cadastrarProduto();
 void listarProdutos();
 void salvarProdutosCSV(Produto p);
+void atualizarEstoque(int idProduto, int novaQuant);
 
 #endif

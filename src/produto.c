@@ -11,7 +11,6 @@ void verificaOuCriaArquivo() {
     if(fp != NULL) {
       fprintf(fp, "id,nome,preco,estoque\n");
       fclose(fp);
-
       printf("Arquivo criado automaticamente: %s", ARQUIVO_CSV);
     } else {
       perror("Erro ao criar o arquivo de produtos");
@@ -82,4 +81,43 @@ void salvarProdutosCSV(Produto p) {
 
   fprintf(fp, "%d,%s,%.2f,%d\n", p.id, p.nome, p.preco, p.quant);
   fclose(fp);
+}
+
+void atualizarEstoque(int idProduto, int novaQuant) {
+  verificaOuCriaArquivo();
+
+  FILE *fp = fopen(ARQUIVO_CSV, "r");
+
+  if(fp == NULL) {
+    perror("Erro ao abrir o arquivo de produtos");
+    return;
+  }
+
+  Produto lista[200];
+  int count = 0;
+  char linha[256];
+
+  fgets(linha, sizeof(linha), fp);
+  while(fscanf(fp, "%d, %99[^,]%f, %d\n", &lista[count].id, lista[count].nome, &lista[count].preco, &lista[count].quant) == 4) {
+    if(lista[count].id == idProduto) {
+      lista[count].quant = novaQuant;
+    }
+    count++;
+  }
+  fclose(fp);
+
+  fp = fopen(ARQUIVO_CSV, "w");
+  if(fp == NULL) {
+    perror("Erro ao abrir o arquivo para atualização");
+    return;
+  }
+
+  fprintf(fp, "id,nome,preco,estoque");
+  for(int i = 0; i < count; i++) {
+    fprintf(fp, "%d,%s,%.2f,%d\n", lista[i].id, lista[i].nome, lista[i].preco, lista[i].quant);
+  }
+
+  fclose(fp);
+
+  printf("\nEstoque do produto %d atualizado para %d unidades.\n", idProduto, novaQuant);
 }
